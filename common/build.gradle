@@ -1,0 +1,11 @@
+import dependencies.Libraries
+
+apply plugin: 'kotlin-config'
+apply plugin: 'ktlint-config'
+
+dependencies {
+    // Kotlin
+    implementation Libraries.kotlinStdlib
+
+    testImplementation Libraries.junit
+}

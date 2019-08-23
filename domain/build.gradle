@@ -1,0 +1,18 @@
+import dependencies.Libraries
+
+apply plugin: 'kotlin-config'
+apply plugin: 'ktlint-config'
+
+dependencies {
+    // Dagger
+    implementation Libraries.dagger
+    kapt Libraries.daggerCompiler
+
+    // Kotlin
+    implementation Libraries.kotlinStdlib
+
+    // Rx
+    implementation Libraries.rxJava
+
+    testImplementation Libraries.junit
+}

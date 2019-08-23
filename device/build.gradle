@@ -1,0 +1,22 @@
+import dependencies.Libraries
+
+apply plugin: 'com.android.library'
+apply plugin: 'android-config'
+apply plugin: 'ktlint-config'
+apply from: "$rootDir/gradle/coverage.gradle"
+
+dependencies {
+    androidTestImplementation Libraries.androidxEspressoCore
+    androidTestImplementation Libraries.androidxEspressoContrib
+    androidTestImplementation Libraries.androidxTestRules
+    androidTestImplementation Libraries.androidxTestRunner
+
+    // Android
+    implementation Libraries.androidxAnnotations
+
+    // Kotlin
+    implementation Libraries.kotlinStdlib
+
+    testImplementation Libraries.androidxTestExtJUnit
+    testImplementation Libraries.androidxTestExtTruth
+}

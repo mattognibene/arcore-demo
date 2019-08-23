@@ -1,0 +1,36 @@
+import dependencies.Libraries
+
+apply plugin: 'com.android.library'
+apply plugin: 'android-config'
+apply plugin: 'ktlint-config'
+apply from: "$rootDir/gradle/coverage.gradle"
+
+dependencies {
+    // Kotlin
+    implementation Libraries.kotlinStdlib
+
+    // Dagger
+    implementation Libraries.dagger
+    kapt Libraries.daggerCompiler
+
+    // OkHttp
+    api Libraries.okhttp
+    api Libraries.okhttpLogging
+
+    // Retrofit
+    api Libraries.retrofit
+    api Libraries.retrofitRxJavaAdapter
+    api Libraries.retrofitMoshiConverter
+
+    // Moshi
+    implementation Libraries.moshi
+
+    // RxJava
+    implementation Libraries.rxJava
+
+    // Timber
+    implementation Libraries.timber
+
+    testImplementation Libraries.androidxTestExtJUnit
+    testImplementation Libraries.androidxTestExtTruth
+}

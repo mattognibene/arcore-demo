@@ -1,0 +1,29 @@
+import dependencies.Libraries
+
+apply plugin: 'com.android.library'
+apply plugin: 'android-config'
+apply plugin: 'ktlint-config'
+apply from: "$rootDir/gradle/coverage.gradle"
+
+dependencies {
+    implementation project(":domain")
+    api project(':cache')
+    api project(':remote')
+
+    // Android
+    implementation Libraries.androidxAnnotations
+
+    // Dagger
+    implementation Libraries.dagger
+    kapt Libraries.daggerCompiler
+
+    // Kotlin
+    implementation Libraries.kotlinStdlib
+
+    // Rx
+    implementation Libraries.rxJava
+    implementation Libraries.rxAndroid
+
+    testImplementation Libraries.androidxTestExtJUnit
+    testImplementation Libraries.androidxTestExtTruth
+}

@@ -1,0 +1,97 @@
+import dependencies.Libraries
+
+apply plugin: 'com.android.application'
+apply plugin: 'android-config'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'ktlint-config'
+apply plugin: 'hockeyapp-config'
+apply from: "$rootDir/gradle/coverage.gradle"
+
+android {
+
+    defaultConfig {
+        applicationId "com.mattognibene.ardemo"
+        testApplicationId "com.mattognibene.ardemo.test"
+    }
+
+    signingConfigs {
+        develop {
+            storeFile file("${project.rootDir}/keystores/ardemoDevelop.jks")
+            storePassword propOrEmpty('STORE_PASSWORD')
+            keyAlias 'ardemoDevelop'
+            keyPassword propOrEmpty('KEY_PASSWORD')
+        }
+
+        sprint {
+            storeFile file("${project.rootDir}/keystores/ardemoSprint.jks")
+            storePassword propOrEmpty('STORE_PASSWORD')
+            keyAlias 'ardemoSprint'
+            keyPassword propOrEmpty('KEY_PASSWORD')
+        }
+        
+        production {
+            storeFile file('${project.rootDir}/keystores/ardemoProduction.jks')
+            storePassword propOrEmpty('STORE_PASSWORD')
+            keyAlias 'ardemoProduction'
+            keyPassword propOrEmpty('KEY_PASSWORD')
+        }
+    }
+
+    flavorDimensions "track"
+
+    productFlavors {
+        develop {
+            dimension "track"
+            applicationIdSuffix ".develop"
+            signingConfig signingConfigs.develop
+        }
+        sprint {
+            dimension "track"
+            applicationIdSuffix ".sprint"
+            signingConfig signingConfigs.sprint
+        }
+        production {
+            dimension "track"
+            signingConfig signingConfigs.production
+        }
+    }
+}
+
+dependencies {
+    androidTestImplementation Libraries.androidxEspressoCore
+    androidTestImplementation Libraries.androidxEspressoContrib
+    androidTestImplementation Libraries.androidxTestRules
+    androidTestImplementation Libraries.androidxTestRunner
+    androidTestImplementation Libraries.androidxTestExtJUnit
+
+    implementation project(':common')
+    implementation project(':domain')
+    implementation project(':data')
+    implementation project(':device')
+    lintChecks project(':lint')
+
+    implementation Libraries.kotlinStdlib
+    implementation Libraries.androidxCore
+    implementation Libraries.androidxAnnotations
+    implementation Libraries.materialComponents
+    implementation Libraries.androidxConstraintLayout
+
+    implementation Libraries.dagger
+    kapt Libraries.daggerCompiler
+    implementation Libraries.daggerAndroidSupport
+    kapt Libraries.daggerAndroidCompiler
+
+    implementation Libraries.rxAndroid
+    implementation Libraries.rxJava
+    implementation Libraries.rxRelay
+
+    implementation Libraries.autoDisposeBase
+    implementation Libraries.autoDisposeKtx
+    implementation Libraries.autoDisposeJetpack
+    implementation Libraries.autoDisposeJetpackKtx
+
+    implementation Libraries.timber
+
+    testImplementation Libraries.androidxTestExtJUnit
+    testImplementation Libraries.androidxTestExtTruth
+}
