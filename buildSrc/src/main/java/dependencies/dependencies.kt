@@ -8,7 +8,7 @@ object Config {
     val buildValue = if (build.isNullOrEmpty()) 0 else build.toInt()
     val isCiBuild = System.getenv("CI") == "true"
 
-    const val minSdk = 23
+    const val minSdk = 24
     const val targetSdk = 28
     const val compileSdk = 28
     const val buildTools = "28.0.3"
@@ -28,6 +28,7 @@ object Versions {
     const val retrofit = "2.5.0"
     const val roboletric = "4.3"
     const val room = "2.1.0-rc01"
+    const val arcore = "1.11.0"
 }
 
 object Plugins {
@@ -120,4 +121,8 @@ object Libraries {
     const val junit = "junit:junit:4.12"
 
     const val robolectric = "org.robolectric:robolectric:${Versions.roboletric}"
+
+    //ARCore
+    const val arcore = "com.google.ar:core${Versions.arcore}"
+    const val sceneform = "com.google.ar.sceneform.ux:sceneform-ux:${Versions.arcore}"
 }

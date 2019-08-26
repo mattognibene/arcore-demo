@@ -11,3 +11,4 @@
 .externalNativeBuild
 /lint
 /buildSrc/build
+/buildSrc
