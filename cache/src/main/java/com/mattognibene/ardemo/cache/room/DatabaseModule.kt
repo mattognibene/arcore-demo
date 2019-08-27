@@ -1,4 +1,4 @@
-package com.mattognibene.ardemo.cache.room;
+package com.mattognibene.ardemo.cache.room
 
 import android.app.Application
 import androidx.room.Room

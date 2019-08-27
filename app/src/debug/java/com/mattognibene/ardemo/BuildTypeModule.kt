@@ -1,4 +1,4 @@
-package com.mattognibene.ardemo;
+package com.mattognibene.ardemo
 
 import android.os.StrictMode
 

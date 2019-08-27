@@ -1,8 +1,8 @@
-package com.mattognibene.ardemo.data.injection;
+package com.mattognibene.ardemo.data.injection
 
-import com.mattognibene.ardemo.cache.room.DatabaseModule;
-import com.mattognibene.ardemo.domain.executors.AppExecutors;
-import com.mattognibene.ardemo.remote.NetworkModule;
+import com.mattognibene.ardemo.cache.room.DatabaseModule
+import com.mattognibene.ardemo.domain.executors.AppExecutors
+import com.mattognibene.ardemo.remote.NetworkModule
 
 import java.util.concurrent.Executors
 

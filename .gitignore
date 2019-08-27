@@ -12,3 +12,7 @@
 /lint
 /buildSrc/build
 /buildSrc
+.idea
+buildSrc
+.circleci
+buildSrc/build

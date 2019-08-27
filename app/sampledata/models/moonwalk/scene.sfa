@@ -1,0 +1,168 @@
+{
+  materials: [
+    {
+      name: 'helmet_MAT',
+      parameters: [
+        {
+          baseColorFactor: [
+            1,
+            0.194132,
+            0,
+            1,
+          ],
+        },
+        {
+          baseColor: null,
+        },
+        {
+          diffuseColorFactor: null,
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: null,
+        },
+        {
+          metallicFactor: 0.94339600000000001,
+        },
+        {
+          roughnessFactor: 0.113208,
+        },
+        {
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: null,
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+    {
+      name: 'suit_diff_MAT',
+      parameters: [
+        {
+          baseColorFactor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColor: 'suit_diff_MAT_baseColor',
+        },
+        {
+          diffuseColorFactor: null,
+        },
+        {
+          diffuseColor: null,
+        },
+        {
+          normal: 'suit_diff_MAT_normal',
+        },
+        {
+          metallicFactor: 0,
+        },
+        {
+          roughnessFactor: 0.59999999999999998,
+        },
+        {
+          specularFactor: null,
+        },
+        {
+          glossinessFactor: null,
+        },
+        {
+          specularGlossiness: null,
+        },
+        {
+          specularGlossinessCalculation: null,
+        },
+        {
+          metallicRoughness: null,
+        },
+        {
+          occlusion: 'suit_diff_MAT_metallicRoughness',
+        },
+        {
+          emissiveFactor: [
+            0,
+            0,
+            0,
+            1,
+          ],
+        },
+        {
+          emissive: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/gltf_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+    ],
+    collision: {},
+    file: 'sampledata/models/moonwalk/scene.gltf',
+    name: 'scene',
+    recenter: 'root',
+    scale: 2.0999999999999999e-05,
+  },
+  samplers: [
+    {
+      file: 'sampledata/models/moonwalk/textures/suit_diff_MAT_metallicRoughness.png',
+      name: 'suit_diff_MAT_metallicRoughness',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: 'textures/suit_diff_MAT_metallicRoughness.png',
+    },
+    {
+      file: 'sampledata/models/moonwalk/textures/suit_diff_MAT_baseColor.png',
+      name: 'suit_diff_MAT_baseColor',
+      pipeline_name: 'textures/suit_diff_MAT_baseColor.png',
+    },
+    {
+      file: 'sampledata/models/moonwalk/textures/suit_diff_MAT_normal.png',
+      name: 'suit_diff_MAT_normal',
+      params: {
+        usage_type: 'Normal',
+      },
+      pipeline_name: 'textures/suit_diff_MAT_normal.png',
+    },
+  ],
+  version: '0.54:2',
+}

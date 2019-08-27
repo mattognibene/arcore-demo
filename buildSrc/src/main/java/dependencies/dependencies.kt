@@ -123,6 +123,6 @@ object Libraries {
     const val robolectric = "org.robolectric:robolectric:${Versions.roboletric}"
 
     //ARCore
-    const val arcore = "com.google.ar:core${Versions.arcore}"
+    const val arcore = "com.google.ar:core:${Versions.arcore}"
     const val sceneform = "com.google.ar.sceneform.ux:sceneform-ux:${Versions.arcore}"
 }

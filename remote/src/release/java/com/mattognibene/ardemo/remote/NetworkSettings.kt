@@ -1,4 +1,4 @@
-package com.mattognibene.ardemo.remote;
+package com.mattognibene.ardemo.remote
 
 import dagger.Module
 import dagger.Provides
